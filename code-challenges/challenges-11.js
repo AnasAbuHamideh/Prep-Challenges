@@ -17,6 +17,8 @@
 
 function square(arr) {
     // write your code here
+    let arr1=arr.map(x => x * x)
+    return arr1;
 }
 
 // 2) ------------------
@@ -56,6 +58,9 @@ function square(arr) {
 
 function fullName(arr) {
     // write your code here
+    let arr1=arr.map(x=>
+    `${x.firstName} ${x.lastName}`)
+    return arr1;
 }
 
 // 3) ---------------------
@@ -118,6 +123,10 @@ function fullName(arr) {
 
 function gradesAvg(arr) {
     // write your code here
+    let arr1=arr.map(x=>{
+        let avg=x.gradsList/x.gradsList.length-1;
+    })
+        return arr1;
 }
 
 
