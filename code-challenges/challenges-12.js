@@ -71,8 +71,9 @@ const oddFiltration = (arr) => {
 const cvsFiltration = (arr) => {
     // write your code here
     const result = arr.filter(x=> 
-        {x.yearsOfExperience>4
-        return `${x.firstName} ${x.LastName} ${x.tech}`
+        {
+        if(x.firstName!=null&&x.LastName!=null&&x.yearsOfExperience>4)
+        return `${x.firstName}+${x.LastName} ${x.tech}`
         });
     return result;
 }

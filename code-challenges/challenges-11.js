@@ -124,7 +124,8 @@ function fullName(arr) {
 function gradesAvg(arr) {
     // write your code here
     let arr1=arr.map(x=>{
-        let avg=x.gradsList/x.gradsList.length-1;
+        x.gradsList/x.gradsList.length;
+        return `avg:${x} firstName:${x.firstName} gradsList:${x.gradsList} lastName:${x.lastName}  `
     })
         return arr1;
 }
