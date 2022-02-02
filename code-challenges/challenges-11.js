@@ -123,10 +123,21 @@ function fullName(arr) {
 
 function gradesAvg(arr) {
     // write your code here
-    let arr1=arr.map(x=>{
-        let avg=x.gradsList/x.gradsList.length-1;
-    })
-        return arr1;
+    // let arr1=arr.map(x=>{
+    //     x.gradsList/x.gradsList.length;
+    //     return `avg:${x} firstName:${x.firstName} gradsList:${x.gradsList} lastName:${x.lastName}  `
+    // })
+    //     return arr1;
+    let arr1 = [];
+    arr1 = arr.map(value => {
+        const fullName = {}
+        for (let Key in value) {
+            fullName[`${Key}`] = value[Key];
+        }
+        fullName.avg = value.gradsList.reduce((a, b) => a + b, 0) / value.gradsList.length;
+        return fullName;
+    });
+    return arr1;
 }
 
 
@@ -198,6 +209,19 @@ function gradesAvg(arr) {
 
 function studentsResult(arr) {
     // write your code here
+    let arr1 = [];
+    arr1 = arr.map(x => {
+        const result = {}
+        for (let p in x) {
+            result[`${p}`] = x[p];
+        }
+        if (x.avg >= 50)
+            result.result = 'Passed';
+        else
+            result.result = 'Failed';
+        return result;
+    });
+    return arr1;
 }
 
 module.exports = { square, fullName, gradesAvg, studentsResult };
