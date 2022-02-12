@@ -53,8 +53,15 @@ const LastWord_2 = (str) => {
 
 const replaceWords = (str) => {
     // write your code here
-    
-
+    var s=str.split(" ");
+    s.splice(0,1,"We");
+    if(s[1].includes("am")){
+    s.splice(1,1,"are");
+    }
+    if(s[1].includes("was")){
+        s.splice(1,1,"were");
+    }
+return s.join(" ");
 }
 
 // 4) ---------------------
@@ -66,8 +73,11 @@ const replaceWords = (str) => {
 
 const arrToStr = (arr) => {
     // write your code here
-    let n=arr.splice(4,0,",");
-    return n; 
+    
+    arr[4]+=",";
+    var str= arr.join(" ");
+    return str;
+
 }
 
 // 5) ---------------------
