@@ -16,15 +16,17 @@
 
 const recursionPattern = (int1, int2) => {
     let arr=[];
+    let max=int1;
     // write your code here 
-    if(int1 <= int1 && int1 > 0){
-     let n=int1-int2;
-     arr.push(n);
-    }else if (int1 <= int1 && int1 < 0){
-     let n=int1-int2;
-     arr.push(n);
+    while(int1>0){
+        arr.push(int1);
+        int1=int1-int2;
     }
-    return arr;
+    while(int1<=max){
+        arr.push(int1);
+        int1=int1+int2;
+    }
+   return arr;
 }
 // -------------------------------------------------------------------------------------------------------
 
@@ -44,7 +46,10 @@ const recursionPattern = (int1, int2) => {
 
 const filterLinks = (str) => {
     // write your code here
-    let p=/http://www.hackerrank.com/g;
+    let p=/www.+\w+\.\w+/g;
+    let r=str.match(p);
+    r=r.join("");
+    return r;
 }
 // -------------------------------------------------------------------------------------------------------
 
@@ -63,7 +68,10 @@ const filterLinks = (str) => {
 //
 
 const isPalindrome = (str) => {
-    // write your code here
+  var re = /[\W_]/g;
+  var lowRegStr = str.toLowerCase().replace(re, '');
+  var reverseStr = lowRegStr.split('').reverse().join(''); 
+  return reverseStr === lowRegStr;
 }
 // -------------------------------------------------------------------------------------------------------
 
